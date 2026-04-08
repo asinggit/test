@@ -1,0 +1,11 @@
+sink{
+  db{
+     jdbc_url:"jdbc:sqlserver://localhost\\\\mycomputer:14001"
+     sink_tbl:my_table
+     }
+     }
+source{
+    file{ ./dev
+    }
+    }
+      
