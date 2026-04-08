@@ -1,5 +1,6 @@
 
 val table: String = config.getString("sink.db.tbl")
+val files: String = config.getString(
 df= spark.read.csv(
     "some_input_file.csv", 
     header=True, 
