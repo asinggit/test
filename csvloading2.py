@@ -8,4 +8,4 @@ df= spark.read.csv(
     schema=schema
 )
 
-df.write.saveAsTable(table)
+df.write.saveAsTable("table1")
