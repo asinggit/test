@@ -1,11 +1,16 @@
+import pyspark
+from pyspark.sql import SparkSession
+from pyspark.sql import Row
+appName= "hive_pyspark"
+master= "local"
 
-val table: String = config.getString("sink.db.tbl")
-val files: String = config.getString("source.file")
-df= spark.read.csv(
-    files, 
-    header=True, 
-    mode="DROPMALFORMED", 
-    schema=schema
-)
+spark = SparkSession.builder \
+	.master(master).appName(appName).enableHiveSupport().getOrCreate()
 
-df.write.saveAsTable("table1")
+datafile=spark.read.csv("/home/bigdata/Downloads/drivers.csv",header=True)
+datafile.show(5)
+datafile.write.saveAsTable("drivers_table")
+
+
+
+
