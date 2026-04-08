@@ -7,7 +7,7 @@ master= "local"
 spark = SparkSession.builder \
 	.master(master).appName(appName).enableHiveSupport().getOrCreate()
 
-datafile=spark.read.csv("/home/bigdata/Downloads/drivers.csv",header=True)
+datafile=spark.read.csv("/home/bigdata/Downloads/drakes.csv",header=True)
 datafile.show(5)
 datafile.write.saveAsTable("drivers_table")
 
