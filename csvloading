@@ -2,7 +2,7 @@
 val table: String = config.getString("sink.db.tbl")
 val files: String = config.getString("source.file")
 df= spark.read.csv(
-    "some_input_file.csv", 
+    files, 
     header=True, 
     mode="DROPMALFORMED", 
     schema=schema
