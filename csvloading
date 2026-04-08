@@ -1,0 +1,10 @@
+
+val table: String = config.getString("sink.db.tbl")
+df= spark.read.csv(
+    "some_input_file.csv", 
+    header=True, 
+    mode="DROPMALFORMED", 
+    schema=schema
+)
+
+df.write.saveAsTable(table)
