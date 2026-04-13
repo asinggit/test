@@ -14,7 +14,9 @@
 ],
 "tables": [
     {
-        "name": "lreid",
+       T2[
+         columns{
+          "name": "lreid",
          "dataType": "string",
          "sourceColumn": "lineid",
          "sourceProviderType": "Varchar"
@@ -25,4 +27,4 @@
          "sourceColumn": "ssbu",
          "sourceProviderType": "Varchar"
 }
-]
+]}]}
